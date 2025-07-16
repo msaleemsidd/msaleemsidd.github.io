@@ -22,10 +22,11 @@ jobs:
 
       - name: Build project
         run: npm run build
-        
+
       - name: Deploy to GitHub Pages
         run: npm run deploy # This runs 'gh-pages -d build'
         env:
+          username: ${{ secrets.FTP_USERNAME }}
           # The GITHUB_TOKEN is automatically available to the workflow
           # and given necessary permissions by the 'permissions' block above.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

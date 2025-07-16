@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiPlay, FiStar, FiDownload, FiUsers, FiAward, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiStar, FiDownload, FiUsers, FiAward, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const FeaturedGame = () => {
   const [activeGame, setActiveGame] = useState(0);

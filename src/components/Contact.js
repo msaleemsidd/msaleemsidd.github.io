@@ -6,11 +6,12 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    subject: '', // Subject is in the form but not used by backend yet
     message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState(null); // To show success/error messages
 
   const contactInfo = [
     {
@@ -44,13 +45,38 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setSubmitMessage(null); // Clear previous messages
+
+    try {
+      const response = await fetch('http://localhost:5000/api/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          // Note: Your backend currently only logs name, email, message.
+          // If you want to log subject, you'll need to update your backend's logToSheet function.
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage({ type: 'success', text: data.message });
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form on success
+      } else {
+        setSubmitMessage({ type: 'error', text: data.error || 'Something went wrong.' });
+      }
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitMessage({ type: 'error', text: 'Network error. Please try again later.' });
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      alert('Thank you for your message! I will get back to you soon.');
-    }, 2000);
+    }
   };
 
   return (
@@ -215,6 +241,12 @@ const Contact = () => {
                 />
               </div>
 
+              {submitMessage && (
+                <div className={`p-3 rounded-lg text-center ${submitMessage.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
+                  {submitMessage.text}
+                </div>
+              )}
+
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
@@ -242,4 +274,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

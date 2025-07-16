@@ -263,7 +263,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="heading-secondary mb-4">
-            My <span className="text-secondary">Projects</span>
+            <span className="text-secondary">Portfolio</span>
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto"></div>
         </motion.div>

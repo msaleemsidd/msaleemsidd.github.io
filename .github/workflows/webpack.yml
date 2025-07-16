@@ -22,14 +22,10 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Upload production-ready build files
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.FTP_USERNAME }}
-          local_path: "./build/*"
-          sftp_only: true
-          server: ${{ secrets.FTP_SERVER }}
-          port: ${{ secrets.FTP_PORT }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          remote_path: "/var/www/html/login/player"
+        
+      - name: Deploy to GitHub Pages
+        run: npm run deploy # This runs 'gh-pages -d build'
+        env:
+          # The GITHUB_TOKEN is automatically available to the workflow
+          # and given necessary permissions by the 'permissions' block above.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

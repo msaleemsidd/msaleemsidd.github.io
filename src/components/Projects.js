@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiStar, FiX } from 'react-icons/fi';
+import { FiX } from 'react-icons/fi';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');

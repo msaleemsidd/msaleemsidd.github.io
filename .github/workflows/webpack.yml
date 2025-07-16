@@ -25,7 +25,11 @@ jobs:
       run: |
         git config user.email "saleemsiddiqui1996@gmail.com"
         git config user.name "Saleem Siddiqui"
-
+        
+    - name: Set GitHub Pages remote URL
+      run: |
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        
     - name: Deploy
       run: npm run deploy
       env:

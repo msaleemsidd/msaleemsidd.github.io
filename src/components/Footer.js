@@ -29,8 +29,9 @@ const Footer = () => {
                 &lt;Saleem Siddiqui /&gt;
               </h3>
               <p className="text-textSecondary text-sm leading-relaxed">
-                A passionate Unity Game Developer focused on creating engaging mobile games 
-                and building innovative gaming experiences for Android and iOS platforms.
+                A passionate Team Lead & Senior Software Engineer with 7+ years of experience in 
+                full-stack development, game development, and scalable backend systems. Specializing 
+                in Unity3D, React, Go, and cloud-native architectures.
               </p>
             </motion.div>
 
@@ -81,6 +82,9 @@ const Footer = () => {
                 </p>
                 <p className="text-textSecondary">
                   <span className="text-secondary">Location:</span> Karachi, Pakistan
+                </p>
+                <p className="text-textSecondary">
+                  <span className="text-secondary">Experience:</span> 7+ Years
                 </p>
               </div>
             </motion.div>

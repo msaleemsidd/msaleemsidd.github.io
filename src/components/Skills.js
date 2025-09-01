@@ -1,51 +1,94 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCode, FiDatabase, FiCloud, FiTool } from 'react-icons/fi';
+import { FiCode, FiDatabase, FiCloud, FiTool, FiServer, FiGlobe, FiGitBranch, FiMonitor } from 'react-icons/fi';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Programming',
+      title: 'Programming Languages',
       icon: FiCode,
       skills: [
         { name: 'C#', percentage: 95 },
-        { name: 'Flutter', percentage: 85 },
-        { name: 'TypeScript', percentage: 80 },
-        { name: 'Go', percentage: 75 },
-        { name: 'Unity3D', percentage: 95 },
+        { name: 'Go (Golang)', percentage: 85 },
+        { name: 'TypeScript', percentage: 90 },
+        { name: 'Dart (Flutter)', percentage: 85 },
+        { name: 'Node.js', percentage: 80 },
       ]
     },
     {
       title: 'Game Development',
-      icon: FiDatabase,
+      icon: FiMonitor,
       skills: [
         { name: 'Unity3D', percentage: 95 },
         { name: 'Flutter Flame', percentage: 85 },
-        { name: 'PIXIJS', percentage: 80 },
+        { name: 'PixiJS', percentage: 80 },
         { name: 'Box2D', percentage: 75 },
         { name: 'AR/VR', percentage: 70 },
+      ]
+    },
+    {
+      title: 'Web Development',
+      icon: FiGlobe,
+      skills: [
+        { name: 'Next.js', percentage: 85 },
+        { name: 'React', percentage: 90 },
+        { name: 'Tailwind CSS', percentage: 90 },
+        { name: 'Responsive UI/UX', percentage: 85 },
+      ]
+    },
+    {
+      title: 'Databases & Storage',
+      icon: FiDatabase,
+      skills: [
+        { name: 'PostgreSQL', percentage: 80 },
+        { name: 'CockroachDB', percentage: 75 },
+        { name: 'Supabase', percentage: 85 },
+        { name: 'DynamoDB', percentage: 75 },
+        { name: 'AWS S3', percentage: 85 },
+        { name: 'Prisma ORM', percentage: 80 },
+        { name: 'GORM', percentage: 75 },
+      ]
+    },
+    {
+      title: 'Server & Backend',
+      icon: FiServer,
+      skills: [
+        { name: 'Multiplayer Server', percentage: 90 },
+        { name: 'Nakama', percentage: 85 },
+        { name: 'REST APIs', percentage: 90 },
+        { name: 'Backend Architecture', percentage: 85 },
       ]
     },
     {
       title: 'APIs & SDKs',
       icon: FiCloud,
       skills: [
-        { name: 'Third-Party Plugins', percentage: 90 },
-        { name: 'Game Analytics', percentage: 85 },
+        { name: 'Firebase', percentage: 90 },
+        { name: 'Analytics', percentage: 85 },
         { name: 'In-Game Ads', percentage: 90 },
-        { name: 'Firebase', percentage: 85 },
-        { name: 'Nakama', percentage: 80 },
+        { name: 'Third-Party SDKs', percentage: 85 },
       ]
     },
     {
-      title: 'Cloud & Tools',
+      title: 'Cloud & DevOps',
       icon: FiTool,
       skills: [
         { name: 'Docker', percentage: 85 },
-        { name: 'AWS S3', percentage: 80 },
-        { name: 'Git/Bitbucket', percentage: 90 },
-        { name: 'Asana/Slack', percentage: 85 },
-        { name: 'Digital Ocean', percentage: 75 },
+        { name: 'AWS', percentage: 80 },
+        { name: 'DigitalOcean', percentage: 75 },
+        { name: 'CI/CD', percentage: 80 },
+        { name: 'Deployment Pipelines', percentage: 75 },
+      ]
+    },
+    {
+      title: 'Version Control & Collaboration',
+      icon: FiGitBranch,
+      skills: [
+        { name: 'Git', percentage: 90 },
+        { name: 'GitHub', percentage: 90 },
+        { name: 'Bitbucket', percentage: 85 },
+        { name: 'Project Management', percentage: 85 },
+        { name: 'Asana & Slack', percentage: 80 },
       ]
     }
   ];
@@ -66,7 +109,7 @@ const Skills = () => {
           <div className="w-24 h-1 bg-secondary mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -95,8 +138,8 @@ const Skills = () => {
                     viewport={{ once: true }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-textPrimary font-medium">{skill.name}</span>
-                      <span className="text-secondary font-mono text-sm">{skill.percentage}%</span>
+                      <span className="text-textPrimary font-medium text-sm">{skill.name}</span>
+                      <span className="text-secondary font-mono text-xs">{skill.percentage}%</span>
                     </div>
                     <div className="w-full bg-gray-950 rounded-full h-2">
                       <motion.div
@@ -126,12 +169,14 @@ const Skills = () => {
             Additional Skills & Technologies
           </h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
-              'Multiplayer Development', 'Server Deployment', 'Cloud Integration', 'Performance Optimization', 'Quality Assurance', 'Team Leadership',
-              'Agile Development', 'Sprint Management', 'Code Review', 'Mentoring', 'Project Management', 'Cross-functional Collaboration',
-              'Unity Editor Tools', 'Node.js Development', 'TypeScript', 'Addressable Assets', 'Configuration Systems', 'API Development',
-              'Task Management', 'Dependency Injection', 'Async/Await', 'Unity UI', 'Physics Engines', 'Third-party SDKs'
+              'Performance Optimization', 'Quality Assurance', 'Team Leadership', 'Agile Development',
+              'Sprint Management', 'Code Review', 'Mentoring', 'Cross-functional Collaboration',
+              'Unity Editor Tools', 'Addressable Assets', 'Configuration Systems', 'API Development',
+              'Task Management', 'Dependency Injection', 'Async/Await', 'Unity UI', 'Physics Engines',
+              'Real-time Systems', 'Microservices', 'Load Balancing',
+              'Monitoring & Logging', 'Security Best Practices', 'Testing Strategies', 'Documentation'
             ].map((skill, index) => (
               <motion.div
                 key={skill}
@@ -139,9 +184,9 @@ const Skills = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="text-center p-4 bg-gray-950 bg-opacity-50 rounded-lg border border-gray-800 hover:border-secondary transition-all duration-300"
+                className="text-center p-3 bg-gray-950 bg-opacity-50 rounded-lg border border-gray-800 hover:border-secondary transition-all duration-300"
               >
-                <span className="text-textSecondary text-sm font-medium">{skill}</span>
+                <span className="text-textSecondary text-xs font-medium">{skill}</span>
               </motion.div>
             ))}
           </div>

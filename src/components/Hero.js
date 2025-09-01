@@ -44,7 +44,7 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="heading-secondary text-textSecondary"
             >
-              I create engaging mobile games.
+              I create engaging mobile and web applications.
             </motion.h2>
             
             <motion.p
@@ -53,9 +53,10 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="text-body max-w-lg"
             >
-              Game Developer with extensive experience in developing, maintaining, and improving game applications
-              using Unity3D and related technologies. Expertise in idle clickers, hyper-casual games, multiplayer
-              games, and integration of third-party plugins.
+              Software Engineer with extensive experience in designing, developing, and optimizing software 
+              applications using modern technologies. Skilled in building scalable systems, implementing 
+              efficient architectures, and integrating third-party services. Strong background in maintaining 
+              high-performance applications and delivering innovative, quality-driven software solutions.
             </motion.p>
             
             <motion.div

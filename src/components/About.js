@@ -10,8 +10,22 @@ const About = () => {
   ];
 
   const skills = [
-    'Unity3D', 'C#', 'Flutter', 'TypeScript', 'Go', 'Flutter Flame', 'PIXIJS', 'Box2D',
-    'Firebase', 'Game Analytics', 'Docker', 'AWS', 'Nakama', 'Git', 'Bitbucket', 'Multiplayer', 'AR/VR',
+    // Programming Languages
+    'C#', 'Go (Golang)', 'TypeScript', 'Dart (Flutter)', 'Node.js',
+    // Game Development
+    'Unity3D', 'PixiJS', 'AR/VR',
+    // Web Development
+    'Next.js', 'React', 'Tailwind CSS', 'Responsive UI/UX',
+    // Databases & Storage
+    'PostgreSQL', 'CockroachDB', 'Supabase', 'DynamoDB', 'AWS S3', 'Prisma ORM', 'GORM',
+    // Server & Backend
+    'Multiplayer Server', 'Nakama', 'REST APIs', 'Backend Architecture',
+    // APIs & SDKs
+    'Firebase', 'Analytics', 'In-Game Ads', 'Third-Party SDKs',
+    // Cloud & DevOps
+    'Docker', 'AWS', 'DigitalOcean', 'CI/CD',
+    // Version Control & Collaboration
+    'GitHub', 'Project Management', 'Asana', 'Slack'
   ];
 
   return (
@@ -86,25 +100,23 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-semibold text-textPrimary">
-              A passionate Game Developer with extensive experience
+              A passionate Software Engineer with extensive experience
             </h3>
             
             <div className="space-y-4 text-body">
-              <p>
-                I am a passionate and dedicated Game Developer with over 7 years of experience 
-                in developing, maintaining, and improving game applications using Unity3D and related technologies. 
-                I specialize in idle clickers, hyper-casual games, multiplayer games, and integration of third-party plugins.
-              </p>
-              <p>
-                My journey in game development began with Unity and has expanded to include Flutter Flame, 
-                PIXIJS, and Box2D. I've worked on various projects ranging from hyper-casual games to 
-                complex multiplayer experiences with server deployment and cloud integration.
-              </p>
-              <p>
-                I believe in delivering high-performance, quality-driven game applications and seeking 
-                opportunities to bring innovation and creativity to game development.
-              </p>
-            </div>
+  <p>
+    I am a passionate <strong>Team Lead & Senior Software Engineer</strong> with 7+ years of 
+    experience building high-quality software, web and mobile applications. Skilled in <strong>full-stack 
+    development, backend systems, and scalable multiplayer architectures</strong>, I focus on 
+    delivering performance-driven and innovative solutions.
+  </p>
+  <p>
+    Starting with <strong>Unity3D</strong>, my expertise has expanded to <strong>Flutter, React, 
+    Next.js, Go (Golang), and Node.js</strong>. I have led projects ranging from <strong>hyper-casual 
+    and idle games</strong> to <strong>real-time multiplayer platforms</strong> with cloud deployment 
+    and third-party integrations.
+  </p>
+</div>
 
             {/* Skills Tags */}
             <div>
